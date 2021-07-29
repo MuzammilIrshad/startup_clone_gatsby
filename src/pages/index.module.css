@@ -1,0 +1,235 @@
+.post {
+    margin-left: 2em;
+}
+#grid1 {
+    margin-right: 2.5em;
+}
+         #post1 h2 {
+            position: absolute;
+            /* left: 36px; */
+            width: 400px;
+            color: white;
+            font-family: system-ui;
+        }
+.post2 h2 {
+    font-size: 18px;
+    position: absolute;
+    width: 210px;
+    margin-top:1em;
+    color: white;
+}
+.post2+.post2{
+    padding-top:0.8em;
+}
+.posts{
+    display:flex;
+    margin-top:1em;
+}
+a{
+    background: #f4f4f4;
+    color: black;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #e4e4e4;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+p {
+    color: #777777;
+    font-size: .8rem;
+    font-style: italic;
+}
+
+/*Section2*/
+
+
+#tech hr {
+    height: 3px;
+    background-color: #34ba34b3;
+    margin-top: -0.8em;
+    margin-left: 9em;
+    width: 70%;
+}
+#tech p {
+    font-style: inherit;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+}
+.techNews h2 {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    position: absolute;
+    width: 150px;
+    margin-top: 5em;
+}
+#techData{
+   display:flex;
+   box-shadow:none;
+}
+.techNews {
+    margin-left:0.5em;
+}
+#section2{
+    display:flex;
+}
+#popular hr {
+    height: 3px;
+    background-color: #34ba34b3;
+    margin-top: -0.8em;
+    margin-left: 5em;
+    width: 65%;
+}
+#popular p {
+    font-style: inherit;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+}
+
+.popular_Data {
+    display:flex;
+    margin-top:3em;
+}
+    .popular_Data h2 {
+        font-size: 15px;
+        padding-left: 1em;
+        font-family: auto;
+        font-weight: bolder;
+        padding-bottom: 3em;
+    }
+    .popular_Data img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-size: cover;
+    }
+    .popular_Data a {
+        display: flex;
+        flex-direction: row;
+
+        background: none;
+        height: 30px;
+    }
+
+
+    /*Section 3*/
+    #section3{
+        margin-top:-3em;
+    }
+
+    #globaltech{
+        box-shadow:none;
+    }
+#globaltech hr {
+    height: 3px;
+    background-color: #34ba34b3;
+    margin-top: -0.8em;
+    margin-left: 9em;
+    width: 45%;
+    margin-top:-2em;
+}
+
+#globaltech p {
+    font-style: inherit;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+}
+#global_tech_data img {
+    width: 300px;
+    border-radius: 20px;
+}
+#global_tech_data h2{
+    font-family: sans-serif;
+    font-size: 19px
+}
+#global_tech_data a {
+    width: 330px;
+    /* box-shadow: none; */
+    background: none;
+}
+.global_content_data {
+    display: flex;
+    margin-top: 1em;
+    width:350px;
+    margin-bottom:1em;
+    box-shadow:none;
+    background:none;
+}
+
+    .global_content_data h2 {
+        font-size: 15px;
+        padding-left: 1em;
+        font-family: auto;
+        font-weight: bolder;
+        padding-bottom: 3em;
+    }
+
+    .global_content_data img {
+        width: 70px;
+        height:70px;
+        border-radius: 10px;
+        background-size: cover;
+    }
+
+    .global_content_data a {
+        display: flex;
+        flex-direction: row;
+        background: none;
+        height: 40px;
+        box-shadow: none;
+        background: none;
+    }
+
+    /*Section 4*/
+    #section4{
+        margin-top:3em;
+    }
+.generalNews h2 {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    position: absolute;
+    width: 200px;
+    margin-top: 5em;
+}
+
+/*Section 5*/
+
+#section5 img {
+    height: 170px;
+    width: 300px;
+}
+.mustRead {
+    display: flex;
+    margin-top: 1em;
+}
+
+    .mustRead h2 {
+        font-size: 17px;
+        font-family: auto;
+        font-weight: bolder;
+        padding-bottom: 3em;
+        font-family: sans-serif;
+    }
+
+    .mustRead a {
+       
+        margin-top: 1em;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: row;
+        background: none;
+        height: 30px;
+    }

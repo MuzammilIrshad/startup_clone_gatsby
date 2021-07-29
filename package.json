@@ -16,8 +16,20 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.0.0",
+    "@contentful/rich-text-types": "^15.0.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.4",
     "gatsby": "^3.10.1",
+    "gatsby-plugin-image": "^1.10.1",
+    "gatsby-plugin-material-ui": "^3.0.1",
+    "gatsby-plugin-sharp": "^3.10.2",
+    "gatsby-source-contentful": "^5.10.0",
+    "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-transformer-sharp": "^3.10.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0"
   }
 }

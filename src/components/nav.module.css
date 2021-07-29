@@ -1,0 +1,55 @@
+.nav1 {
+    width: 100%;
+    height: 30px;
+    background-color: aliceblue;
+}
+.navItems>p {
+    padding-bottom:-1em;
+    font-size: 15px;
+    font-style: initial;
+    font-weight: bolder;
+}
+    .navItems span {
+        padding-right: 2em;
+    }
+
+    .navItems{
+        display:flex;
+    }
+        .navItems > p + div {
+           padding-left:32em;
+        }
+        .navItems > p + div svg {
+            height: 20px;
+            padding-left: 1em;
+            margin-top:-0.3em;
+        }
+.logo {
+    text-align: center;
+    margin-top: 1em;
+}
+.linksBar{
+    height:40px;
+    width:100%;
+    background-color:rgba(17, 14, 14, 0.90);
+}
+    .linksBar > ol li {
+        color: white;
+        list-style: none;
+        margin-left: 2em;
+        cursor:pointer;
+    }
+    .linksBar>ol li:hover{
+        background-color:black;
+    }
+    .linksBar ol {
+        display: flex;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: larger;
+        padding-top: 0.5em;
+    }
+
+
+
+
