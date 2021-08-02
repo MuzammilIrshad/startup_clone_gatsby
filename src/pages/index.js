@@ -5,6 +5,7 @@ import * as blogStyles from './index.module.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { useState } from "react";
 
 export default function Blog() {
 
@@ -29,17 +30,19 @@ query {
 }
 `)
     console.log(data);
+    const [isOpen, setIsOpen] = useState(false);
     const blogs = data.allContentfulStartupPakistan.edges;
     if (blogs) {
         console.log(blogs.slice(0,2))
     }
+
     return (
         <LayOut>
             <div className={blogStyles.posts}>
                 <Grid container spacing={1}>
-                <Grid item md={5} className={blogStyles.post} id={blogStyles.grid1}>
-                    <Paper> <div id={blogStyles.post1}>
-                        <Link to={`/blog/${blogs[0].node.slug}`} style={{
+                    <Grid item md={5} className={blogStyles.post} id={blogStyles.grid1}>
+                        <Paper> <div id={blogStyles.post1} onClick={() => setIsOpen(true)}>
+                            <Link to={`${isOpen ? '/'+blogs[0].node.slug:'/'}`} style={{
                             backgroundImage: `url(${blogs[0].node.image.fluid.src})`, height: '400px',
                             width: '100%', backgroundSize: 'cover', paddingTop: '2em',
                             backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -53,7 +56,7 @@ query {
                 </Grid>
                 <Grid item md={3} className={blogStyles.post}>
                     <Paper>  <div className={blogStyles.post2}>
-                        <Link to={`/blog/${blogs[1].node.slug}`} style={{
+                            <Link to={`${isOpen ? '/' + blogs[1].node.slug : '/'}`} style={{
                             backgroundImage: `url(${blogs[1].node.image.fluid.src})`, height: '170px',
                             width: '200px', backgroundSize: 'cover', paddingTop: '2em',
                             backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -65,7 +68,7 @@ query {
                         </Link>
                     </div>
                         <div className={blogStyles.post2}>
-                            <Link to={`/blog/${blogs[2].node.slug}`} style={{
+                                <Link to={`${isOpen ? '/' + blogs[2].node.slug : '/'}`} style={{
                                 backgroundImage: `url(${blogs[2].node.image.fluid.src})`, height: '170px',
                                 width: '200px', backgroundSize: 'cover', paddingTop: '2em',
                                 backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -79,7 +82,7 @@ query {
                 </Grid>
                 <Grid item md={3} className={blogStyles.post}>
                     <Paper> <div className={blogStyles.post2}>
-                        <Link to={`/blog/${blogs[3].node.slug}`} style={{
+                            <Link to={`${isOpen ? '/' + blogs[3].node.slug : '/'}`} style={{
                             backgroundImage: `url(${blogs[3].node.image.fluid.src})`, height: '170px',
                             width: '200px', backgroundSize: 'cover', paddingTop: '2em',
                             backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -91,7 +94,7 @@ query {
                         </Link>
                     </div>
                         <div className={blogStyles.post2}>
-                            <Link to={`/blog/${blogs[4].node.slug}`} style={{
+                                <Link to={`${isOpen ? '/' + blogs[4].node.slug : '/'}`} style={{
                                 backgroundImage: `url(${blogs[4].node.image.fluid.src})`, height: '170px',
                                 width: '200px', backgroundSize: 'cover', paddingTop: '2em',
                                 backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -107,15 +110,15 @@ query {
             </div>
             <br />
             <div id={blogStyles.section2}>
-                <Grid container spacing={1}>
+                <Grid container spacing={3}>
                     <Grid item  md={7}>
                     <Paper style={{ boxShadow:'none' }}>
                         <div id={blogStyles.tech}>
                             <p>TECHNOLOGY <hr /></p>
                         </div>
                         <div id={blogStyles.techData}>
-                            <div className={blogStyles.techNews}>
-                                <Link to={`/blog/${blogs[1].node.slug}`} style={{
+                                <div className={blogStyles.techNews}>
+                                    <Link to={`${isOpen ? '/' + blogs[1].node.slug : '/'}`} style={{
                                     backgroundImage: `url(${blogs[1].node.image.fluid.src})`, height: '200px',
                                     width: '150px', backgroundSize: 'cover', paddingTop: '2em',
                                     backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -128,7 +131,7 @@ query {
                                 </Link>
                             </div>
                             <div className={blogStyles.techNews}>
-                                <Link to={`/blog/${blogs[1].node.slug}`} style={{
+                                    <Link to={`${isOpen ? '/' + blogs[1].node.slug : '/'}`} style={{
                                     backgroundImage: `url(${blogs[1].node.image.fluid.src})`, height: '200px',
                                     width: '150px', backgroundSize: 'cover', paddingTop: '2em',
                                     backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -141,7 +144,7 @@ query {
                                 </Link>
                             </div>
                             <div className={blogStyles.techNews}>
-                                <Link to={`/blog/${blogs[1].node.slug}`} style={{
+                                    <Link to={`${isOpen ? '/' + blogs[1].node.slug : '/'}`} style={{
                                     backgroundImage: `url(${blogs[1].node.image.fluid.src})`, height: '200px',
                                     width: '150px', backgroundSize: 'cover', paddingTop: '2em',
                                     backgroundRepeat: 'no-repeat', /* background-attachment: fixed; */
@@ -153,7 +156,68 @@ query {
                                     <h2>Tech <br /><br />{blogs[1].node.heading}</h2>
                                 </Link>
                             </div>
-                        </div>
+                            </div>
+                            <div id={blogStyles.section3}>
+                                <Grid container spacing={0}>
+                                    <Grid item md={7}>
+                                        <Paper style={{ boxShadow: 'none' }}>
+                                            <div id={blogStyles.globaltech}>
+                                                <p>GLOBAL TECH</p><hr />
+                                            </div>
+
+                                            <div id={blogStyles.global_tech_data}>
+                                                <Link to={`${isOpen ? '/' + blogs[1].node.slug : '/'}`} >
+
+                                                    <img src={blogs[1].node.image.fluid.src} />
+                                                    <h2>{blogs[1].node.heading}</h2>
+                                                </Link>
+                                            </div>
+                                            <div className={blogStyles.global_other_contents}>
+                                                {blogs && blogs.slice(0, 2).map((edge) => {
+                                                    return (
+                                                        <div className={blogStyles.global_content_data}>
+                                                            <Link to={`${isOpen ? '/' + edge.node.slug : '/'}`} >
+
+                                                                <img src={edge.node.image.fluid.src} />
+                                                                <h2>{edge.node.heading}</h2>
+                                                            </Link>
+
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </Paper>
+                                    </Grid>
+                                    <Grid item md={4}>
+                                        <Paper style={{ boxShadow: 'none' }}>
+                                            <div id={blogStyles.globaltech}>
+                                                <p>GLOBAL TECH</p><hr />
+                                            </div>
+                                            <div id={blogStyles.global_tech_data}>
+                                                <Link to={`${isOpen ? '/' + blogs[1].node.slug : '/'}`} >
+
+                                                    <img src={blogs[1].node.image.fluid.src} />
+                                                    <h2>{blogs[1].node.heading}</h2>
+                                                </Link>
+                                            </div>
+                                            <div className={blogStyles.global_other_contents}>
+                                                {blogs && blogs.slice(2, 4).map((edge) => {
+                                                    return (
+                                                        <div className={blogStyles.global_content_data}>
+                                                            <Link to={`${isOpen ? '/' + edge.node.slug : '/'}`} >
+
+                                                                <img src={edge.node.image.fluid.src} />
+                                                                <h2>{edge.node.heading}</h2>
+                                                            </Link>
+
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </Paper>
+                                    </Grid>
+                                </Grid>
+                            </div>
                     </Paper>
                 </Grid>
                     <Grid item md={5} >
@@ -164,7 +228,7 @@ query {
                             {blogs && blogs.slice(0, 4).map((edge) => {
                                 return (
                                     <div className={blogStyles.popular_Data}>
-                                        <Link to={`/blog/${edge.node.slug}`} >
+                                        <Link to={`${isOpen ? '/' + edge.node.slug : '/'}`} >
 
                                             <img src={edge.node.image.fluid.src} />
                                             <h2><span>Other</span> <br />{edge.node.heading}</h2>
@@ -178,67 +242,7 @@ query {
                     </Grid>
                 </Grid>
             </div>
-            <div id={blogStyles.section3}>
-                <Grid container spacing={3}>
-                    <Grid item md={4}>
-                        <Paper style={{ boxShadow:'none' }}>
-                            <div id={blogStyles.globaltech}>
-                                <p>GLOBAL TECH</p><hr/>
-                            </div>
-
-                            <div id={blogStyles.global_tech_data}>
-                                <Link to={`/blog/${blogs[1].node.slug}`} >
-
-                                    <img src={blogs[1].node.image.fluid.src} />
-                                    <h2>{blogs[1].node.heading}</h2>
-                                </Link>
-                            </div>
-                            <div className={blogStyles.global_other_contents}>
-                                {blogs && blogs.slice(0, 2).map((edge) => {
-                                    return (
-                                        <div className={blogStyles.global_content_data}>
-                                            <Link to={`/blog/${edge.node.slug}`} >
-
-                                                <img src={edge.node.image.fluid.src} />
-                                                <h2>{edge.node.heading}</h2>
-                                            </Link>
-
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </Paper>
-                    </Grid>
-                    <Grid item md={4}>
-                        <Paper style={{ boxShadow: 'none' }}>
-                            <div id={blogStyles.globaltech}>
-                                <p>GLOBAL TECH</p><hr />
-                            </div>
-                            <div id={blogStyles.global_tech_data}>
-                                <Link to={`/blog/${blogs[1].node.slug}`} >
-
-                                    <img src={blogs[1].node.image.fluid.src} />
-                                    <h2>{blogs[1].node.heading}</h2>
-                                </Link>
-                            </div>
-                            <div className={blogStyles.global_other_contents}>
-                                {blogs && blogs.slice(2, 4).map((edge) => {
-                                    return (
-                                        <div className={blogStyles.global_content_data}>
-                                            <Link to={`/blog/${edge.node.slug}`} >
-
-                                                <img src={edge.node.image.fluid.src} />
-                                                <h2>{edge.node.heading}</h2>
-                                            </Link>
-
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </Paper>
-                    </Grid>
-                </Grid>
-            </div>
+          
             <div id={blogStyles.section4}>
                 <Grid container spacing={3}>
                 {

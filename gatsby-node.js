@@ -24,7 +24,7 @@ query  {
     res.data.allContentfulStartupPakistan.edges.forEach((edge) => {
         createPage({
             component: blogTemplate,
-            path: `/blog/${edge.node.slug}`,
+            path: `/${edge.node.slug}`,
             context: {
                 slug: edge.node.heading
             }

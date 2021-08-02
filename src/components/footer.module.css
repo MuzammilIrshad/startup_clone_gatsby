@@ -1,0 +1,28 @@
+#footer {
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+#data {
+    width: 800px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+    #data p {
+        font-family: sans-serif;
+        font-style: inherit;
+        color: #ffffffbd;
+    }
+    #data a {
+        color: #1a7815;
+        display: inline-block;
+        padding: 1rem;
+        text-decoration: none;
+        background:none;
+    }
