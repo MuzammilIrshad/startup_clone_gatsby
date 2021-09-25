@@ -12,7 +12,7 @@ module.exports = {
             options: {
                 spaceId: `7sf4ubupwnnr`,
                 // Learn about environment variables: https://gatsby.dev/env-vars
-                accessToken: 'Su1VuXso6eloNRC2QUZzGkB9DjLaQ_7VVE9qe2hO6nE',
+                accessToken: `${{secrets.CMS_KEY}}`,
             },
         },
     ],
